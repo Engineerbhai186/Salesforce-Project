@@ -1,0 +1,67 @@
+<template >
+    <lightning-card>
+    <div class="main-container">
+        <nav id="nav">
+          <img src={img} alt="image" height="70px" width="100px">
+   
+        </nav>       
+<section class="section">
+   
+    <div class="left-container">
+        <div class="objects"><lightning-button label="Dashboard" onclick={dashboard}></lightning-button></div>
+        <div class="objects"><lightning-button label="Drives" onclick={drives}></lightning-button></div>
+        <div class="objects"><lightning-button label="Create Drive" onclick={createDrive}></lightning-button></div>
+        <div class="objects"><lightning-button label="Posts" onclick={posts}></lightning-button></div>
+        <div class="objects"><lightning-button label="Create Post" onclick={createPost}></lightning-button></div>
+        <div class="objects"><lightning-button label="Students" onclick={student}></lightning-button></div>
+        <div class="objects"><lightning-button label="Companies" onclick={companies}></lightning-button></div>
+        <div class="objects"><lightning-button label="TOP List" onclick={top}></lightning-button></div>
+        <div class="objects"><lightning-button label="Coordinator List" onclick={coordinatorlist}></lightning-button></div>
+        <div class="objects"><lightning-button label="Events" onclick={events}></lightning-button></div>
+    </div>
+
+
+    <div class="right-container">
+        <!-- Dashboard -->
+        <template if:true={showDashboard}>
+            <h1 style="font-size: 20px;color:white;">DashBoard</h1>
+        </template>
+        <!-- Drives -->
+        <template if:true={showDrives}>
+            <h1 style="font-size: 20px;color:white;">Drives</h1>
+        </template>
+        <!-- create drive -->
+        <template if:true={showcreatedrive}>
+            <h1 style="font-size:25px; color:aliceblue;text-align:center;">Job Details</h1>
+          <lightning-input style="width:200px; display:inline-block;" label="Company Name" type="text" placeholder="Enter Company Name" data-formfield="companyName" required></lightning-input>
+       <lightning-input style="width:200px; display:inline-block;" label="Job Location" type="text" placeholder="Enter location" data-formfield="location" ></lightning-input> <br><br><br>
+      <lightning-input style="width:200px;display:inline-block;" label="Job Profile" type="text" placeholder="Enter Job Profile" data-formfield="jobProfile"></lightning-input> 
+ <lightning-input style="width:200px; display:inline-block; background-color:black;" label="Job Description" type="textarea" placeholder="Enter description" data-formfield="desc" ></lightning-input> <br><br><br>
+<lightning-input style="width:200px; display:inline-block; background-color:black;" label="Date Of Drive" type="date" placeholder="Enter date of drive" data-formfield="date" ></lightning-input> 
+<lightning-input style="width:200px; display:inline-block; background-color:black;" label="Last Date Of Registration" type="date" placeholder="Last date of Registration" data-formfield="lastdate" ></lightning-input> <br><br><br>
+<lightning-input style="width:400px; display:inline-block; background-color:black;" label="Attachment(s) URL" type="url" placeholder="Add Attachments url of pdf and video" data-formfield="url" ></lightning-input> <br><br>
+<lightning-input style="width:400px; display:inline-block; background-color:black;" label="Upload Image" type="file"  data-formfield="image
+" ></lightning-input> <br><br>
+ <br>
+            <div class="btn">
+                <lightning-button  label="Cancle" icon-name="utility:delete" onclick={reset}></lightning-button>
+                <lightning-button style="margin-left: 50px;" label="Save & Continue" variant="brand" onclick={createdrive}></lightning-button>
+            </div>
+        </template>
+<!-- posts -->
+<template if:true={showposts}>
+    <h1 style="font-size: 20px;color:white;">Posts</h1>
+</template>
+    <!-- create posts -->
+    <template if:true={showcreatepost}>
+        <h1 style="font-size: 20px;color:white;">Create Posts</h1>
+    </template>
+
+    </div>
+
+</section>
+
+
+</div>
+</lightning-card>
+</template>
